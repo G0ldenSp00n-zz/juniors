@@ -14,9 +14,12 @@ mongoose.connect(process.env.MONGO_URL, (err) => {
   else console.log('Connected to database...');
 })
 
-app.get('/', flavorController.getFlavors);
+app.get('/flavors', flavorController.getFlavors);
 app.post('/flavors', flavorController.addFlavor);
 app.patch('/likes', flavorController.addLike);
+
+
+app.use(express.static(__dirname + '/../../dist'));
 
 // create server
 app.listen(3000, () => {

@@ -1,0 +1,18 @@
+div#flavorComponent {
+    display: flex;
+    background-color: rgb(202, 202, 202);
+    width: 300px;
+}
+
+div#flavorComponent > p {
+    padding-left: 15px;
+}
+
+div#flavorComponent > p > span#bold {
+    font-weight: bold;
+}
+
+div#flavorComponent > button {
+    padding: 0 25 0 25;
+    margin-left: 15px;
+}

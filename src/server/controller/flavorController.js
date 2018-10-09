@@ -12,6 +12,7 @@ module.exports = {
   },
 
   addFlavor: (req, res) => {
+    console.log(req.body);
     const newFlavor = req.body;
     newFlavor.likes = 1;
 
@@ -20,11 +21,13 @@ module.exports = {
       res.json(data);
     })
     .catch((err) => {
+      console.error(err);
       res.sendStatus(404);
     })
   },
 
   addLike: (req, res) => {
+    console.log('like', req.body);
     flavorSchema.findOneAndUpdate(req.body, {$inc: {likes:1}}, {upsert: true, new: true})
     .then((data) => {
       res.json(data);
